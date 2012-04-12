@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        <title>Simple Direction</title>
+ 
+        <link href="styles.css" rel="stylesheet" type="text/css">
+        
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 minimum-scale=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Description" content="Dont' be afraid to get lost." />
+	<meta name="Keywords" content="gps, navigation, getting lost, simple, personal compass, compass, my compass" />
+	<link rel="stylesheet" href="//code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css">
+	
+  </head>
+  
+  <body>
+    <div id="intro" data-role="page" class="panel">
+      <h1>Dont' be afraid to get lost.</h1>
+      <p>A navigation system for mobile devices simply letting you know if you're going in the right direction, leaving opportunities for finding your way through discovery and even getting lost.</p>
+      
+      <a id="setLocationBtn" data-role="button" href="#direction">Save My Current Location</a>
+      <a id="enterLocationBtn" href="#search" data-role="button">Enter a New Destination</button>
+      <a id="usePrevLoc" href="#direction" data-role="button" >Use Prev Location</a>
+    </div>
+  
+  
+    
+    <div id="search" data-role="page" class="panel">
+      <h1>Dont' be afraid to get lost.</h1>
+
+	<input id="enterLoc" placeholder="Enter a full address"/>
+	<a id="enterLocBtn" href="#direction" data-role="button">Save</a>
+
+    </div>
+    
+    
+    
+    <div id="direction" data-role="page" class="panel">
+      <div data-role="header">
+		<h1>Bar</h1>
+	</div><!-- /header -->
+<div data-role="content">
+      <p>
+        Saved Target location:<br/>
+        <span id="targetLat">???</span>&deg;, <span id="targetLon">???</span>&deg;<br/>
+	<span id="targetAddress">???</span>
+      </p>
+      <p>
+        Current Location (lat, lon):<br/>
+        <span id="currentLat">???</span>&deg;, <span id="currentLon">???</span>&deg;<br/>
+	<span id="currentAdd">???</span><br/>
+	<span id="heading">???</span> degrees
+      </p>
+      <p>
+        Distance from starting location:<br/>
+        <span id="distanceKM">0</span> km<br/>
+        <span id="distanceFT">0</span> feet
+      </p>
+      
+      
+      <canvas id="myCanvas"></canvas>
+</div>
+      
+    </div>
+  <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCd0OwuITWgFYeD40XygkRseJjndM2Nnsg&sensor=false"></script>
+  <script src="script.js"></script>
+  </body>
+</html>
